@@ -1,0 +1,34 @@
+.custom-image-button {
+  height: 3rem;
+  width: 70%;
+  border-radius: 4px;
+  margin-top: auto;
+
+  .image-input {
+    height: 100%;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: white;
+    background: #009cff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      padding-right: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: #004eeb;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+}

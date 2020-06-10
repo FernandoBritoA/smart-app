@@ -1,0 +1,25 @@
+.model-frame {
+  background: var(--bg-primary);
+  height: 28rem;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image-container {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-display {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  }
+  .model-info-container {
+    width: 35%;
+    height: 100%;
+  }
+}
