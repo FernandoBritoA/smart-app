@@ -1,13 +1,14 @@
 import React from 'react';
 import './ModelFrame.scss';
 import ModelInfo from '../ModelInfo/ModelInfo';
-import sample from '../../images/sample.jpg';
+import ImageDisplay from '../ImageDisplay/ImageDisplay';
 
 const ModelFrame = () => {
+  console.log('model-frame rerendered');
   return (
     <div className='model-frame'>
       <div className='image-container'>
-        <img src={sample} alt='' className='image-display' />
+        <ImageDisplay />
       </div>
       <div className='model-info-container'>
         <ModelInfo />

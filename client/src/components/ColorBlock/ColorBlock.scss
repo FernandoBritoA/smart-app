@@ -1,0 +1,34 @@
+.color-block {
+  width: 100%;
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  margin-bottom: 0.2rem;
+
+  .color-info {
+    padding-left: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+
+    &:last-child {
+      padding-right: 10px;
+      margin-left: auto;
+    }
+  }
+}
+
+#whitebg {
+  background: white;
+  width: 400px;
+  z-index: 1;
+}
+
+/* A black layer on top of the white bottom layer */
+#blackbg {
+  background: black;
+  width: 100px;
+  z-index: 2;
+}

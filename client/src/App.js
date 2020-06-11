@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Particles from 'react-particles-js';
 import AnimatedNavbar from './components/AnimatedNavbar/AnimatedNavbar';
+import Alert from './components/Alert/Alert';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import ModelsPage from './pages/ModelsPage/ModelsPage';
@@ -28,6 +29,7 @@ function App() {
           <Route exact path='/' component={HomePage} />
           <Route path='/models' component={ModelsPage} />
         </Switch>
+        <Alert />
       </div>
     </div>
   );
