@@ -1,21 +1,18 @@
 import React from 'react';
-import './ModelInfo.scss';
-import { withRouter } from 'react-router-dom';
-import CustomImageButton from '../CustomImageButton/CustomImageButton';
+import './OverFrame.scss';
 import InfoDisplay from '../InfoDisplay/InfoDisplay';
+import OverImage from '../OverImage/OverImage';
 import WithSpinner from '../WithSpinner/WithSpinner';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectIsLoading } from '../../redux/clarifaiModels/clarifaiModels.selectors';
-import { compose } from 'redux';
 
 const InfoDisplayWithSpinner = WithSpinner(InfoDisplay);
 
-const ModelInfo = ({ location, isLoading }) => {
-  const locationName = location.pathname.replace('/models/', '');
+const OverFrame = ({ response, location, isLoading }) => {
   let modelName;
-  switch (locationName) {
+  switch (location) {
     case 'color':
       modelName = 'Color Identifier';
       break;
@@ -28,17 +25,21 @@ const ModelInfo = ({ location, isLoading }) => {
     default:
       break;
   }
-  //console.log(isLoading);
 
   return (
-    <div className='model-info'>
-      <h3 className='model-title'>{modelName}</h3>
-      <div className='info'>
-        <InfoDisplayWithSpinner
-          isLoading={isLoading}
-          locationName={locationName}
-        />
-        <CustomImageButton />
+    <div className='over-frame'>
+      <div className='over-image'>
+        <OverImage response={response} location={location} />
+      </div>
+      <div className='over-info'>
+        <h3 className='model-title'>{modelName}</h3>
+        <div className='model-info'>
+          <InfoDisplayWithSpinner
+            isLoading={isLoading}
+            response={response}
+            location={location}
+          />
+        </div>
       </div>
     </div>
   );
@@ -48,4 +49,4 @@ const mapStateToProps = createStructuredSelector({
   isLoading: selectIsLoading,
 });
 
-export default compose(withRouter, connect(mapStateToProps))(ModelInfo);
+export default connect(mapStateToProps)(OverFrame);

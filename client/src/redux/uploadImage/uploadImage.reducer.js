@@ -3,6 +3,7 @@ import uploadImageActionTypes from './uploadImage.actionTypes';
 const INITIAL_STATE = {
   imageUrl: 'https://i.ibb.co/GpfCTdT/sample.jpg',
   isImageLoading: false,
+  imageDimensions: { width: 519, height: 346 },
   error: undefined,
 };
 
@@ -13,6 +14,7 @@ const uploadImageReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isImageLoading: true,
+        imageUrl: null,
       };
     case uploadImageActionTypes.UPLOAD_IMAGE_SUCCESS:
       return {
@@ -25,6 +27,11 @@ const uploadImageReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isImageLoading: false,
         error: payload,
+      };
+    case uploadImageActionTypes.GET_IMAGE_DIMENSIONS:
+      return {
+        ...state,
+        imageDimensions: payload,
       };
 
     default:

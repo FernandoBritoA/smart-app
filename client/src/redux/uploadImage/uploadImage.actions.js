@@ -13,6 +13,11 @@ const uploadImageFailure = (errorMsg) => ({
   payload: errorMsg,
 });
 
+export const getImageDimensions = (width, height) => ({
+  type: uploadImageActionTypes.GET_IMAGE_DIMENSIONS,
+  payload: { width, height },
+});
+
 export const uploadImage = (imageFile) => {
   return async (dispatch) => {
     dispatch(uploadImageStart());

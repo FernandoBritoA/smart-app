@@ -22,7 +22,6 @@ const particlesOptions = {
 function App() {
   return (
     <div>
-      <Particles className='particles' params={particlesOptions} />
       <AnimatedNavbar />
       <div className='app-content'>
         <Switch>

@@ -1,7 +1,7 @@
 import clarifaiModelsActionTypes from './clarifaiModels.actionTypes';
 
 const INITIAL_STATE = {
-  response: null,
+  response: { faces: null, colors: null, concepts: null },
   isLoading: false,
 };
 
@@ -12,28 +12,25 @@ const clarifaiModelsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: true,
-        response: null,
       };
 
     case clarifaiModelsActionTypes.PREDICTION_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        response: payload,
+        response: { ...state.response, ...payload },
       };
 
     case clarifaiModelsActionTypes.PREDICTION_FAILURE:
       return {
         ...state,
         isLoading: false,
-        response: null,
       };
 
     case clarifaiModelsActionTypes.CLEAR_RESPONSE:
       return {
         ...state,
-        isLoading: true,
-        response: null,
+        response: { faces: null, colors: null },
       };
 
     default:

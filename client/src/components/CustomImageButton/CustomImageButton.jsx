@@ -4,8 +4,9 @@ import './CustomImageButton.scss';
 import { connect } from 'react-redux';
 import { uploadImage } from '../../redux/uploadImage/uploadImage.actions';
 import { setAlert } from '../../redux/alert/alert.actions';
+import { clearResponse } from '../../redux/clarifaiModels/clarifaiModels.actions';
 
-const CustomImageButton = ({ uploadImage, setAlert }) => {
+const CustomImageButton = ({ uploadImage, setAlert, clearResponse }) => {
   const fileSelectHandler = (e) => {
     const file = e.target.files[0];
     const fileName = file.name;
@@ -17,6 +18,7 @@ const CustomImageButton = ({ uploadImage, setAlert }) => {
       extFile === 'png' ||
       extFile === 'webp'
     ) {
+      clearResponse();
       uploadImage(file);
     } else {
       setAlert('Please enter a valid image format', 'danger');
@@ -46,6 +48,7 @@ const CustomImageButton = ({ uploadImage, setAlert }) => {
 const mapDispatchToProps = (dispatch) => ({
   setAlert: (msg, type) => dispatch(setAlert(msg, type)),
   uploadImage: (imageFile) => dispatch(uploadImage(imageFile)),
+  clearResponse: () => dispatch(clearResponse()),
 });
 
 export default connect(null, mapDispatchToProps)(CustomImageButton);

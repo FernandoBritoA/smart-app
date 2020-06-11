@@ -4,12 +4,13 @@ import './ColorBlock.scss';
 const ColorBlock = ({ ...props }) => {
   const {
     value,
-    w3c: { hex, name },
+    raw_hex,
+    w3c: { name },
   } = props;
   return (
-    <div className='color-block' style={{ background: hex }}>
+    <div className='color-block' style={{ background: raw_hex }}>
       <span className='color-info'>{name}</span>{' '}
-      <span className='color-info'>{hex}</span>{' '}
+      <span className='color-info'>{raw_hex}</span>{' '}
       <span className='color-info'>%{Math.floor(value * 100)}</span>
     </div>
   );

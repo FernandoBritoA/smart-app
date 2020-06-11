@@ -1,10 +1,8 @@
 import React from 'react';
 import './FacesBlock.scss';
 
-const FacesBlock = ({ modelResponse }) => {
-  return (
-    <div className='faces-block'>Faces detected: {modelResponse.length}</div>
-  );
+const FacesBlock = ({ response }) => {
+  return <div className='faces-block'>Faces detected: {response.length}</div>;
 };
 
 export default FacesBlock;

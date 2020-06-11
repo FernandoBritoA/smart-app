@@ -1,0 +1,43 @@
+.over-frame {
+  background: transparent;
+  height: 28rem;
+  width: 65vw;
+  position: absolute;
+  display: flex;
+
+  .over-image {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .over-info {
+    width: 35%;
+    height: 100%;
+    font-family: sofia-pro, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .model-title {
+      width: 100%;
+      height: 10%;
+      color: #1b2634;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--text-primary);
+      padding: 10px;
+    }
+
+    .model-info {
+      width: 100%;
+      height: 65%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

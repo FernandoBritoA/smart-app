@@ -6,12 +6,17 @@ import { selectImageUrl } from '../../redux/uploadImage/uploadImage.selectors';
 
 const ImageDisplay = ({ imageUrl }) => {
   return (
-    <img src={imageUrl} alt='' style={{ maxWidth: '90%', maxHeight: '90%' }} />
+    <img
+      src={imageUrl}
+      alt=''
+      style={{ maxWidth: '90%', maxHeight: '90%' }}
+      id='inputImage'
+    />
   );
 };
 
-const mapDispatchToProps = createStructuredSelector({
+const mapStateToProps = createStructuredSelector({
   imageUrl: selectImageUrl,
 });
 
-export default connect(mapDispatchToProps)(ImageDisplay);
+export default connect(mapStateToProps)(ImageDisplay);

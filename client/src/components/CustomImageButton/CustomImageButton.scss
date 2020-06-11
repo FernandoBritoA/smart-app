@@ -2,6 +2,7 @@
   height: 3rem;
   width: 70%;
   margin-top: auto;
+  z-index: 1;
 
   .image-input {
     height: 100%;
@@ -11,6 +12,7 @@
     letter-spacing: 2px;
     color: white;
     background: #009cff;
+    font-family: sofia-pro, sans-serif;
     text-transform: uppercase;
     display: flex;
     align-items: center;
