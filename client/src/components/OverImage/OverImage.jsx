@@ -17,13 +17,8 @@ const OverImage = ({ response, imageDimensions, location }) => {
         break;
       case 'facerecon':
       case 'apparel':
-        overImage = response.map(({ id, region_info: { bounding_box } }) => (
-          <BoundingBox
-            key={id}
-            box={bounding_box}
-            width={width}
-            height={height}
-          />
+        overImage = response.map(({ id, ...props }) => (
+          <BoundingBox key={id} width={width} height={height} {...props} />
         ));
         break;
       default:

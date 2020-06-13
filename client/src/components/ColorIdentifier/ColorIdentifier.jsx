@@ -12,7 +12,7 @@ const ColorIdentifier = ({ colorIdentifier, imageUrl, colors, location }) => {
   useEffect(() => {
     if (!colors) {
       if (imageUrl) {
-        //colorIdentifier(imageUrl);
+        colorIdentifier(imageUrl);
       }
     }
   }, [colorIdentifier, imageUrl, colors]);

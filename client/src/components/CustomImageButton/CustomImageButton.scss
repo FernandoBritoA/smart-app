@@ -34,3 +34,31 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .custom-image-button {
+    height: 2.4rem;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .custom-image-button {
+    height: 2.2rem;
+    width: 45%;
+
+    .image-input {
+      font-size: 0.6rem;
+
+      .icon {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .custom-image-button {
+    width: 65%;
+  }
+}

@@ -12,7 +12,7 @@ const FaceRecognition = ({ faceRecognition, imageUrl, faces, location }) => {
   useEffect(() => {
     if (!faces) {
       if (imageUrl) {
-        //faceRecognition(imageUrl);
+        faceRecognition(imageUrl);
       }
     }
   }, [faceRecognition, imageUrl, faces]);

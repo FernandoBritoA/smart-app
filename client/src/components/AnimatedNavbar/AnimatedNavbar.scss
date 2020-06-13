@@ -1,8 +1,9 @@
 .navbar {
   position: fixed;
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   transition: width 600ms ease;
   overflow: hidden;
+  z-index: 5;
 
   .navbar-nav {
     list-style: none;
@@ -50,6 +51,15 @@
     //*listed items-----------------------------
     .nav-item {
       width: 100%;
+      background: var(--bg-primary);
+
+      &:hover {
+        background: var(--bg-secondary);
+      }
+
+      &:last-child {
+        margin-top: auto;
+      }
       .nav-link {
         display: flex;
         align-items: center;
@@ -61,13 +71,18 @@
 
         &:hover {
           filter: grayscale(0%) opacity(1);
-          background: var(--bg-secondary);
           color: var(--text-secondary);
         }
 
         .item-image {
           width: 64px * 0.75;
           margin-left: 1rem;
+
+          .icon {
+            text-align: center;
+            padding: 6px;
+            font-size: 1.8rem;
+          }
         }
         .link-text {
           display: none;
@@ -89,13 +104,6 @@
 
           .logo-text {
             left: 4rem;
-          }
-        }
-      }
-      //*listed items--------------------
-      .nav-item {
-        .nav-link {
-          .link-text {
           }
         }
       }
@@ -153,6 +161,9 @@
 
       //*listed items-----------------------------
       .nav-item {
+        &:last-child {
+          display: none;
+        }
         .nav-link {
           justify-content: center;
 

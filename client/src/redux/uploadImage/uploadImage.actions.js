@@ -13,8 +13,8 @@ const uploadImageFailure = (errorMsg) => ({
   payload: errorMsg,
 });
 
-export const getImageDimensions = (width, height) => ({
-  type: uploadImageActionTypes.GET_IMAGE_DIMENSIONS,
+export const setImageDimensions = (width, height) => ({
+  type: uploadImageActionTypes.SET_IMAGE_DIMENSIONS,
   payload: { width, height },
 });
 

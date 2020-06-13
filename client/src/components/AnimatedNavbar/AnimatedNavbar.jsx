@@ -5,6 +5,7 @@ import brain from '../../images/brain.png';
 import face from '../../images/face.png';
 import apparel from '../../images/apparel.png';
 import color from '../../images/color.png';
+import Footer from '../Footer/Footer';
 
 const AnimatedNavbar = () => {
   return (
@@ -61,6 +62,17 @@ const AnimatedNavbar = () => {
               </div>
               <span className='link-text'>Apparel Detector</span>
             </Link>
+          </li>
+
+          <li className='nav-item'>
+            <div className='nav-link'>
+              <div className='item-image'>
+                <i className='fa fa-address-card-o icon' aria-hidden='true' />
+              </div>
+              <div className='link-text'>
+                <Footer />
+              </div>
+            </div>
           </li>
         </ul>
       </nav>

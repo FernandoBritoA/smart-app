@@ -1,6 +1,6 @@
 import clarifaiModelsActionTypes from './clarifaiModels.actionTypes';
 import Clarifai from 'clarifai';
-import { getImageDimensions } from '../uploadImage/uploadImage.actions';
+import { setImageDimensions } from '../uploadImage/uploadImage.actions';
 
 const app = new Clarifai.App({
   apiKey: '8a30a594afae4ebcb9d0bb35103a89a4',
@@ -44,10 +44,11 @@ export const faceRecognition = (imageUrl) => {
       );
       const faces = response.outputs[0].data.regions;
       dispatch(predictionSucess({ faces }));
+
       const image = await document.getElementById('inputImage');
-      const width = image.width;
-      const height = image.height;
-      dispatch(getImageDimensions(width, height));
+      const width = image.clientWidth;
+      const height = image.clientHeight;
+      dispatch(setImageDimensions(width, height));
     } catch (error) {
       dispatch(predictionFailure());
     }
@@ -66,9 +67,9 @@ export const apparelDetector = (imageUrl) => {
       const concepts = response.outputs[0].data.regions;
       dispatch(predictionSucess({ concepts }));
       const image = await document.getElementById('inputImage');
-      const width = image.width;
-      const height = image.height;
-      dispatch(getImageDimensions(width, height));
+      const width = image.clientWidth;
+      const height = image.clientHeight;
+      dispatch(setImageDimensions(width, height));
     } catch (error) {
       dispatch(predictionFailure());
     }

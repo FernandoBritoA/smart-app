@@ -2,7 +2,7 @@ import clarifaiModelsActionTypes from './clarifaiModels.actionTypes';
 
 const INITIAL_STATE = {
   response: { faces: null, colors: null, concepts: null },
-  isLoading: false,
+  isLoading: true,
 };
 
 const clarifaiModelsReducer = (state = INITIAL_STATE, action) => {
@@ -30,7 +30,8 @@ const clarifaiModelsReducer = (state = INITIAL_STATE, action) => {
     case clarifaiModelsActionTypes.CLEAR_RESPONSE:
       return {
         ...state,
-        response: { faces: null, colors: null },
+        response: { faces: null, colors: null, concepts: null },
+        isLoading: true,
       };
 
     default:

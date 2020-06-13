@@ -19,3 +19,36 @@
     }
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .color-block {
+    width: 48%;
+    margin-left: 1%;
+    height: 1.6rem;
+
+    .color-info {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .color-block {
+    height: 2.3rem;
+
+    .color-info {
+      font-size: 0.8rem;
+      padding-left: 3px;
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .color-block {
+    width: 100%;
+
+    .color-info {
+      font-size: 0.95rem;
+      padding-left: 10px;
+    }
+  }
+}

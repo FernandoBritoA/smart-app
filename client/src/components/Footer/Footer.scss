@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 80px;
+  .my-name {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .a-tags {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+
+    .icon {
+      color: var(--text-primary);
+      &:hover {
+        color: #43aeae;
+      }
+    }
+  }
+}

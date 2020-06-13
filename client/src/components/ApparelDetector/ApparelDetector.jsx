@@ -16,7 +16,6 @@ const ApparelDetector = ({ apparelDetector, concepts, imageUrl, location }) => {
       }
     }
   }, [apparelDetector, concepts, imageUrl]);
-
   return (
     <Fragment>
       <OverFrame response={concepts} location={locationName} />

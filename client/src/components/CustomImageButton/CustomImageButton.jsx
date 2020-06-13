@@ -9,21 +9,23 @@ import { clearResponse } from '../../redux/clarifaiModels/clarifaiModels.actions
 const CustomImageButton = ({ uploadImage, setAlert, clearResponse }) => {
   const fileSelectHandler = (e) => {
     const file = e.target.files[0];
-    const fileName = file.name;
-    const idxDot = fileName.lastIndexOf('.') + 1;
-    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (
-      extFile === 'jpg' ||
-      extFile === 'jpeg' ||
-      extFile === 'png' ||
-      extFile === 'webp'
-    ) {
-      clearResponse();
-      uploadImage(file);
-    } else {
-      setAlert('Please enter a valid image format', 'danger');
-      const frm = document.getElementsByName('form')[0];
-      frm.reset();
+    if (file) {
+      const fileName = file.name;
+      const idxDot = fileName.lastIndexOf('.') + 1;
+      const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+      if (
+        extFile === 'jpg' ||
+        extFile === 'jpeg' ||
+        extFile === 'png' ||
+        extFile === 'webp'
+      ) {
+        clearResponse();
+        uploadImage(file);
+      } else {
+        setAlert('Please enter a valid image format', 'danger');
+        const frm = document.getElementsByName('form')[0];
+        frm.reset();
+      }
     }
   };
 

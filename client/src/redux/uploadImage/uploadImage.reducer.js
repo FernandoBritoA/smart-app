@@ -28,7 +28,7 @@ const uploadImageReducer = (state = INITIAL_STATE, action) => {
         isImageLoading: false,
         error: payload,
       };
-    case uploadImageActionTypes.GET_IMAGE_DIMENSIONS:
+    case uploadImageActionTypes.SET_IMAGE_DIMENSIONS:
       return {
         ...state,
         imageDimensions: payload,

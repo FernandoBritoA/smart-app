@@ -9,13 +9,17 @@ export const selectColors = createSelector([selectModels], (models) =>
   models.response.colors ? models.response.colors : null
 );
 
-export const selectConcepts = createSelector([selectModels], (models) =>
-  models.response.concepts
-    ? models.response.concepts.filter(
-        (concept) => concept.data.concepts[0].value > 0.7
-      )
-    : null
-);
+export const selectConcepts = createSelector([selectModels], (models) => {
+  if (models.response.concepts) {
+    const concepts = models.response.concepts.filter(
+      (concept) => concept.data.concepts[0].value > 0.7
+    );
+    if (concepts.length === 0) {
+      return null;
+    }
+    return concepts;
+  }
+});
 
 export const selectIsLoading = createSelector(
   [selectModels],

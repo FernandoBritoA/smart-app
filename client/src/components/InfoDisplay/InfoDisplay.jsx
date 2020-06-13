@@ -5,12 +5,12 @@ import FacesBlock from '../FacesBlock/FacesBlock';
 import ConceptBlock from '../ConceptBlock/ConceptBlock';
 
 const InfoDisplay = ({ response, location }) => {
-  let info;
+  let info = <div className='no-items'>No items detected</div>;
   if (response) {
     switch (location) {
       case 'color':
-        info = response.map(({ id, ...props }) => (
-          <ColorBlock key={id} {...props} />
+        info = response.map(({ ...props }, i) => (
+          <ColorBlock key={i} {...props} />
         ));
         break;
       case 'facerecon':
