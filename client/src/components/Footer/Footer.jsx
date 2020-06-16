@@ -7,7 +7,7 @@ const Footer = () => {
       <span className='my-name'>Fernando Brito</span>
       <div className='a-tags'>
         <a
-          href='https://www.youtube.com/'
+          href='https://fernandobrito.netlify.app/'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -23,7 +23,7 @@ const Footer = () => {
         </a>
 
         <a
-          href='https://www.linkedin.com/in/fernando-brito-a6b347199/'
+          href='https://www.linkedin.com/in/juan-fernando-brito-aguilar-a6b347199/'
           target='_blank'
           rel='noopener noreferrer'
         >
